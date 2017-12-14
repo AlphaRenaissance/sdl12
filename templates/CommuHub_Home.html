@@ -1,0 +1,60 @@
+{% extends "CommuHub_Layout.html" %}
+
+{% block additionalstyles %}
+<!-- Check link -->
+<link href="{{ url_for("static", filename="css/CommuHub_custom.css") }}" rel="stylesheet" />
+{% endblock %}
+
+{% block body %}
+<header class="masthead">
+  <div class="container">
+
+    <div style="margin-bottom: 2%; margin-top: 50px; font-size: 200%">
+        <b>Pick a service</b>
+        <span data-toggle="tooltip" data-placement="right" title="Click on the pictures to navigate">
+            <span style="font-size: 130%;" class="fa fa-2x fa-question-circle-o text-primary sr-icons"></span>
+        </span>
+    </div>
+
+    <hr style="border-width: thick" />
+
+    <div class="row">
+
+        <span style="margin-right: auto; margin-left: auto;">
+            <span style="font-size: 200%;">Donation market</span>
+            <hr />
+            <div class="box" style="border-radius: 50%; display: block;">
+                <a style="border-radius: 50%; display: block;" href="{{ url_for("show_page", page="Donation_Market_Main") }}"><img style="border-radius: 50%; height: 512px; width: 512px;" class="img-fluid" src="../static/img/Donation_Present_Original.jpg" alt="" /></a>
+            </div>
+        </span>
+
+        <span style="margin-right: auto; margin-left: auto;">
+            <span style="font-size: 200%;">Community events</span>
+            <hr />
+            <div class="box" style="border-radius: 50%; display: block;">
+                <a style="border-radius: 50%; display: block;" href="#"><img style="border-radius: 50%;" class="img-fluid" src="../static/img/Event_Tent_Original.png" alt="" /></a>
+            </div>
+        </span>
+
+    </div>
+
+    <div class="intro-text">
+        <hr class="star-light" />
+
+        <span class="name">
+            {{ returnDate }}
+        </span>
+    </div>
+
+  </div>
+</header>
+{% endblock %}
+
+{% block additionalscripts %}
+<script>
+/* For tooltips */
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+{% endblock %}
