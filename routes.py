@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from flask_mail import Mail, Message
+
 app = Flask(__name__)
 
 app.config.update(
@@ -15,7 +16,7 @@ app.config.update(
 mail = Mail(app)
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/feedback', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         msg = Message(subject="Feedback",
@@ -33,4 +34,4 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug = True)
